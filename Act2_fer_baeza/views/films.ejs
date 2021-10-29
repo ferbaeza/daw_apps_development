@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/app_fer.css" type="text/css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@700&display=swap" rel="stylesheet">
+<title><%= Title %>></title>
+</head>
+<body>
+    <article>
+        <a href="./"><button id="but">GoBack</button></a>    
+        <h1><%= Title %></h1>
+        <h2>Year <%=Year%></h2>
+        <p><span><%=Rated%></span><span>Released on: <%=Released%></span></p>
+        <p>Time: <%=Runtime%> Genre: <%=Genre%> </p>
+        <p>Director: <%=Director%>, Writed by: <%=Writer%></p>
+        
+        <p>Actors: </p><%=Actors%>
+        <p>Plot: </p><%=Plot%>
+        <p>Languaje: <%=Language%>, Country: <%=Country%></p>
+        <p>Awards: <%=Awards%></p>
+        <p>Metascore: <%= Metascore %></p>
+        <p>imdbRating: <%= imdbRating %></p>
+        <p>imdbVotes: <%= imdbVotes %></p>
+        <p>imdbID: <%= imdbID %></p>
+        <p>Type: <%= Type %></p>
+        <div class="images">
+            <% for(let image of Images){ %>
+
+                <p><img id="img"src="<%=image%>"></p>
+        
+            <% } %>
+        </div>
+    </article>
+
+    
+</body>
+</html>
