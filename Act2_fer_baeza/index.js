@@ -13,7 +13,8 @@ app.get('/',(req,res) =>{
 });
 
 app.get('/films', (req,res) =>{
-    const q = req.query.q;
+    //conts q = req.query.q;  //Solo cogemos un valor de la query
+    const {q} = req.query;  // Asi podemos pasar varios parametros de query
     const film = jsonDoc[q];
     if (film){
         res.render('films', {...film});

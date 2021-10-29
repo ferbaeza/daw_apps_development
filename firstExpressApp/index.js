@@ -35,18 +35,15 @@ app.get('/search', (req, res) => {
 app.get('/authors', (req, res) => {
     res.send("<h1 style='color:blue;'>AUTHORS PAGE</h1>")
 });
-
 //You need RESTClient in order to test this
 app.post('/buy', (req, res) => {
     //DB operations
     res.send("POST REQUEST TO BUY A BOOK");
 });
-
 //In other case... default option
 app.get('*', (req, res) => {
     res.send("<h1 style='color:red;'>ERROR!!</h1>")
 });
-
 //-------------------------------------------------------
 //Create Server
 app.listen(port, ()=>{
