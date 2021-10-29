@@ -20,7 +20,7 @@ const requestListener2 = function(req, res){
 };
 
 const requestListener3 = function(req, res){
-	res.setHeader("content-type" , "aplication/jason");
+	res.setHeader("content-type" , "aplication/json");
 	res.end(`{"name":"Leo", "Surname":"Messi", "Edad":34}`);
 
 };
