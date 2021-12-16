@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+
+    <title>players</title>
+</head>
+<body>
+    <div class="container is-max-widescreen">
+        <div class="notification is-primary">
+            <h1 class="title">Players</h1>
+            <h2 class="subtitle">Avaiables</h2>
+        </div>
+        <div class="control">
+            <a href="/players/new"><button class="button is-primary">New Player</button></a>
+        </div>
+    
+        <% for(let player of players) {%>
+
+        <div class="tile is-ancestor">
+        <div class="tile is-22">
+            <a href="/players/<%=player._id%>">
+              <div class="tile is-child box">
+                <div class="notification is-info">
+                <p class="title"><%= player.name %>  <%= player.surname %>  <%= player.team %> </p>
+              </div> 
+              <p class="title"></p>Age:  <%= player.age %>    Position: <%= player.position %></p>
+              <div class="control mt-3">
+                <form method="POST" action="/players/<%=player._id%>?_method=DELETE">
+                    <button class="button is-danger">Delete</button>
+                </form>
+            </div>
+ 
+
+            </div>    
+
+              </a>
+        
+        </div>
+        </div>
+          <% } %>
+
+
+    </div>
+</body>
+</html>
