@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <title>New fichaje</title>
+</head>
+<body>
+    <div class="container is-max-widescreen">
+        <div class="notification is-primary">
+            <h2 class="subtitle">New Note</h2>
+        </div>
+    <form action="/notes" method="POST">
+        <div class="container-max-width">
+            <label class="label is-medium m-auto w-auto">Title</label>
+            <div class="control has-icons-left has-icons-right">
+              <input class="input is-medium"type="text" name="title" placeholder="Title">
+              <span class="icon is-small is-left">
+                <i class="fas fa-envelope fa-xs"></i>
+              </span>
+              <span class="icon is-small is-right">
+                <i class="fas fa-check fa-xs"></i>
+              </span>
+            </div>
+          </div>
+          <div class="field">
+            <label class="label is-medium">Body</label>
+            <div class="control has-icons-left has-icons-right">
+              <input class="input is-medium"type="text" name="body" placeholder="Body">
+              <span class="icon is-small is-left">
+                <i class="fas fa-envelope fa-xs"></i>
+              </span>
+              <span class="icon is-small is-right">
+                <i class="fas fa-check fa-xs"></i>
+              </span>
+            </div>
+          </div>
+        <div class="control">
+            <div class="select">
+                <select name="position">
+                    <% for(let g of group) { %>
+                        <option value="<%=g%>"><%=g%></option>
+                    <% } %> 
+                </select>
+            </div>
+          </div>
+        <div class="control">
+            <div class="select">
+                <select name="team">
+                    <% for(let c of category) { %>
+                        <option value="<%= c %>"><%= c %></option>
+                    <% } %> 
+                </select>
+                    </div>
+          </div>
+
+        <div class="control">
+            <button class="button is-primary">Submit</button>
+          </div>
+    </form>
+</div>
+
+</body>
+</html>
